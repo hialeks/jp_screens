@@ -9,8 +9,6 @@ class Screen01 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: 855,
-        width: 395,
         decoration: Screen01Styles.backgroundImageDecoration(),
         child: Stack(
           children: [

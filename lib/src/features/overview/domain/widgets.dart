@@ -2,11 +2,19 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:jp_screens/src/features/overview/domain/styles.dart';
+import 'package:jp_screens/src/features/overview/presentation/screens/screen_01.dart';
 import 'package:jp_screens/src/features/overview/presentation/screens/screen_02.dart';
 
 //! Screen 1
 
 class Screen01Widgets {
+  static Widget backgroundImageDecoration() {
+    return const SizedBox(
+      height: 855,
+      width: 395,
+    );
+  }
+
   static Widget chickCupcakesGraphic() {
     return Positioned(
       left: -28,
@@ -179,6 +187,58 @@ class Screen02Widgets {
     );
   }
 
+  static Widget addOrderButton(BuildContext context) {
+    return Positioned(
+      left: 40,
+      top: 395,
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) {
+                return const Screen01(); //!Screen
+              }),
+            );
+          },
+          child: Container(
+            width: 90,
+            height: 40,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              gradient: const RadialGradient(
+                center: Alignment(0.7, 0.15),
+                radius: 2.75,
+                colors: [Color(0xFF938CF4), Color(0xFFDAADF5)],
+              ),
+              boxShadow: const [
+                BoxShadow(
+                  color: Color.fromARGB(255, 121, 60, 104),
+                  blurRadius: 20.00,
+                  offset: Offset(1, 11),
+                  spreadRadius: 5,
+                ),
+              ],
+            ),
+            child: const Center(
+              child: Text(
+                'Add to order',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 11,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w600,
+                  height: 0,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
   static Widget ratingText() {
     return const Positioned(
       left: 325,
@@ -333,6 +393,7 @@ class Screen02Widgets {
     );
   }
 
+/*
   static Widget addButton(BuildContext context) {
     return Positioned(
       left: 40,
@@ -380,7 +441,7 @@ class Screen02Widgets {
       ),
     );
   }
-
+*/
   static Widget product3DImage() {
     return Positioned(
       left: 151,

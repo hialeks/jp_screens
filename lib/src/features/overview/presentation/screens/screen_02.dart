@@ -18,46 +18,14 @@ class Screen02 extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            Positioned(
-              left: 19,
-              top: 75,
-              child: Screen02Widgets.headerText(),
-            ),
-            Positioned(
-              left: 20,
-              top: 230,
-              child: Screen02Widgets.productBckgImage(),
-            ),
-            Positioned(
-              left: 151,
-              top: 264,
-              child: Screen02Widgets.product3DImage(),
-            ),
-            /*Positioned(
-              left: 40,
-              top: 395,
-              child: Screen02Widgets.addButton(),
-            ), */
-            Positioned(
-              left: 40,
-              top: 270,
-              child: Screen02Widgets.productDescriptionText(),
-            ),
-            Positioned(
-              left: 42,
-              top: 313,
-              child: Screen02Widgets.productPriceText(),
-            ),
-            Positioned(
-              left: 325,
-              top: 245,
-              child: Screen02Widgets.ratingText(),
-            ),
-            Positioned(
-              left: 309,
-              top: 246,
-              child: Screen02Widgets.starIcon(),
-            ),
+            Screen02Widgets.headerText(),
+            Screen02Widgets.productBckgImage(),
+            Screen02Widgets.product3DImage(),
+            Screen02Widgets.addOrderButton(context), // addButton
+            Screen02Widgets.productDescriptionText(),
+            Screen02Widgets.productPriceText(),
+            Screen02Widgets.ratingText(),
+            Screen02Widgets.starIcon(),
             Positioned(
               left: 45,
               top: 161,
