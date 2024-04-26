@@ -26,13 +26,18 @@ class Screen02 extends StatelessWidget {
             Positioned(
               left: 20,
               top: 230,
-              child: Screen02Widgets.product3DImage(),
+              child: Screen02Widgets.productBckgImage(),
             ),
             Positioned(
+              left: 151,
+              top: 264,
+              child: Screen02Widgets.product3DImage(),
+            ),
+            /*Positioned(
               left: 40,
               top: 395,
               child: Screen02Widgets.addButton(),
-            ),
+            ), */
             Positioned(
               left: 40,
               top: 270,
@@ -42,11 +47,6 @@ class Screen02 extends StatelessWidget {
               left: 42,
               top: 313,
               child: Screen02Widgets.productPriceText(),
-            ),
-            Positioned(
-              left: 151,
-              top: 264,
-              child: Screen02Widgets.product3DImage(),
             ),
             Positioned(
               left: 325,
@@ -105,7 +105,8 @@ class Screen02 extends StatelessWidget {
                     children: [
                       Screen02Widgets.productItem(
                         imageUrl: "assets/grafiken/cat cupcakes_3D.png",
-                        cupName: "Mogli’s Cup",
+                        cupName: "Mogli"
+                            "’s Cup",
                         productName: "Strawberry ice cream",
                         likes: "♡ 200",
                         price: "₳ 8.99",

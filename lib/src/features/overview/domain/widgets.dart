@@ -2,8 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:jp_screens/src/features/overview/domain/styles.dart';
-// import 'package:jp_screens/src/features/overview/presentation/screens/screen_02.dart';
-import 'package:jp_screens/src/features/overview/presentation/screens/screen_02_full.dart';
+import 'package:jp_screens/src/features/overview/presentation/screens/screen_02.dart';
 
 //! Screen 1
 
@@ -67,7 +66,7 @@ class Screen01Widgets {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) {
-                return const Screen02f();
+                return const Screen02();
               }),
             );
           },
@@ -411,6 +410,23 @@ class Screen02Widgets {
           fontFamily: 'Inter',
           fontWeight: FontWeight.w600,
           height: 0,
+        ),
+      ),
+    );
+  }
+
+  static Widget productBckgImage() {
+    return Positioned(
+      left: 20,
+      top: 230,
+      child: Container(
+        width: 360,
+        height: 240,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/details/trapez.png"),
+            fit: BoxFit.fill,
+          ),
         ),
       ),
     );

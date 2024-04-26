@@ -84,6 +84,4 @@ class Screen02Styles {
     fontWeight: FontWeight.w600,
     height: 0,
   );
-
-  // Define other text styles as needed
 }
