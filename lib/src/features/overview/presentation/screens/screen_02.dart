@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jp_screens/src/features/overview/domain/widgets.dart';
 
 class Screen02 extends StatelessWidget {
-  const Screen02({super.key});
+  const Screen02({super.key}); // Тук добавяме Key параметър към конструктора
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +18,31 @@ class Screen02 extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            Screen02Widgets.headerText(),
-            Screen02Widgets.productImage(),
-            Screen02Widgets.addButton(),
-            Screen02Widgets.productDescriptionText(),
-            Screen02Widgets.productPriceText(),
+            Positioned(
+              left: 19,
+              top: 75,
+              child: Screen02Widgets.headerText(),
+            ),
+            Positioned(
+              left: 20,
+              top: 230,
+              child: Screen02Widgets.product3DImage(),
+            ),
+            Positioned(
+              left: 40,
+              top: 395,
+              child: Screen02Widgets.addButton(),
+            ),
+            Positioned(
+              left: 40,
+              top: 270,
+              child: Screen02Widgets.productDescriptionText(),
+            ),
+            Positioned(
+              left: 42,
+              top: 313,
+              child: Screen02Widgets.productPriceText(),
+            ),
             Positioned(
               left: 151,
               top: 264,

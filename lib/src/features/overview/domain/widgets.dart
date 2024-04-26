@@ -158,19 +158,178 @@ class Screen02Widgets {
     );
   }
 
-  static Widget productImage() {
+  static Widget productDescriptionText() {
+    return const Positioned(
+      left: 40,
+      top: 270,
+      child: Text(
+        "Delish meat burger\nthat tastes like heaven",
+        style: Screen02Styles.productDescriptionTextStyle,
+      ),
+    );
+  }
+
+  static Widget productPriceText() {
+    return const Positioned(
+      left: 42,
+      top: 313,
+      child: Text(
+        '₳ 13.99',
+        style: Screen02Styles.productPriceTextStyle,
+      ),
+    );
+  }
+
+  static Widget ratingText() {
+    return const Positioned(
+      left: 325,
+      top: 245,
+      child: Text(
+        '4.8',
+        style: Screen02Styles.ratingTextStyle,
+      ),
+    );
+  }
+
+  static Widget starIcon() {
     return Positioned(
-      left: 20,
-      top: 230,
+      left: 309,
+      top: 246,
       child: Container(
-        width: 360,
-        height: 240,
+        width: 13,
+        height: 13,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/details/Trapez.png"),
+            image: AssetImage("assets/grafiken/star.png"),
             fit: BoxFit.fill,
           ),
         ),
+      ),
+    );
+  }
+
+  static Widget categorysText(String text) {
+    return Positioned(
+      left: 23,
+      top: 160,
+      child: Text(
+        text,
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 11,
+          fontFamily: 'Inter',
+          fontWeight: FontWeight.w600,
+          height: 0,
+        ),
+      ),
+    );
+  }
+
+  static Widget recommendationsText() {
+    return const Positioned(
+      left: 23,
+      top: 514,
+      child: Text(
+        'We Recommend',
+        style: TextStyle(
+          color: Color(0xFFF7F7F7),
+          fontSize: 16,
+          fontFamily: 'Inter',
+          fontWeight: FontWeight.w700,
+        ),
+      ),
+    );
+  }
+
+  static Widget productItem({
+    required String imageUrl,
+    required String cupName,
+    required String productName,
+    required String price,
+    required String likes,
+  }) {
+    return Container(
+      margin: const EdgeInsets.only(right: 25),
+      width: 190,
+      height: 262,
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [
+            Color.fromARGB(255, 99, 98, 107),
+            Color.fromARGB(255, 121, 118, 192),
+            Color.fromARGB(255, 115, 86, 189)
+          ],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          stops: [0.0, 0.5, 1.0],
+        ),
+        borderRadius: BorderRadius.circular(28.0),
+        border: Border.all(
+          color: const Color.fromARGB(255, 142, 130, 171),
+          width: 1.5,
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 0),
+          Container(
+            width: 160,
+            height: 160,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(imageUrl),
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+          const SizedBox(height: 10),
+          Text(
+            cupName,
+            style: const TextStyle(
+              color: Color(0xFFF7F7F7),
+              fontSize: 13,
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(height: 2),
+          Text(
+            productName,
+            style: const TextStyle(
+              color: Color(0xFFAFA6DA),
+              fontSize: 12,
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+          const SizedBox(height: 2),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                price,
+                style: const TextStyle(
+                  color: Color(0xFFF7F7F7),
+                  fontSize: 13,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const Spacer(),
+              Text(
+                likes,
+                style: const TextStyle(
+                  color: Color(0xFFAFA6DA),
+                  fontSize: 13,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ],
+          )
+        ],
       ),
     );
   }
@@ -223,24 +382,53 @@ class Screen02Widgets {
     );
   }
 
-  static productItem(
-      {required String imageUrl,
-      required String cupName,
-      required String productName,
-      required String price,
-      required String likes}) {}
+  static Widget product3DImage() {
+    return Positioned(
+      left: 151,
+      top: 264,
+      child: Container(
+        width: 219,
+        height: 218,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/grafiken/Burger_3D.png"),
+            fit: BoxFit.fill,
+          ),
+        ),
+      ),
+    );
+  }
 
-  static productDescriptionText() {}
+  static Widget categoryText(String text) {
+    return Positioned(
+      left: 23,
+      top: 160,
+      child: Text(
+        text,
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 11,
+          fontFamily: 'Inter',
+          fontWeight: FontWeight.w600,
+          height: 0,
+        ),
+      ),
+    );
+  }
 
-  static recommendationText() {}
-
-  static categoryText(String s) {}
-
-  static productPriceText() {}
-
-  static product3DImage() {}
-
-  static ratingText() {}
-
-  static starIcon() {}
+  static Widget recommendationText() {
+    return const Positioned(
+      left: 23,
+      top: 514,
+      child: Text(
+        'We Recommend',
+        style: TextStyle(
+          color: Color(0xFFF7F7F7),
+          fontSize: 16,
+          fontFamily: 'Inter',
+          fontWeight: FontWeight.w700,
+        ),
+      ),
+    );
+  }
 }

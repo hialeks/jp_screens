@@ -61,7 +61,7 @@ class Screen02Styles {
     height: 0,
   );
 
-  static const TextStyle productTextStyle = TextStyle(
+  static const TextStyle productDescriptionTextStyle = TextStyle(
     color: Color(0xFF94909A),
     fontSize: 11.50,
     fontFamily: 'Inter',
@@ -69,7 +69,7 @@ class Screen02Styles {
     height: 0,
   );
 
-  static const TextStyle priceTextStyle = TextStyle(
+  static const TextStyle productPriceTextStyle = TextStyle(
     color: Color(0xFFF7F7F7),
     fontSize: 15,
     fontFamily: 'Inter',
@@ -77,18 +77,13 @@ class Screen02Styles {
     height: 0,
   );
 
-  static const TextStyle categoryTextStyle = TextStyle(
-    color: Colors.white,
-    fontSize: 11,
+  static const TextStyle ratingTextStyle = TextStyle(
+    color: Color(0xFF94909A),
+    fontSize: 11.50,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w600,
     height: 0,
   );
 
-  static const TextStyle recommendedTextStyle = TextStyle(
-    color: Color(0xFFF7F7F7),
-    fontSize: 16,
-    fontFamily: 'Inter',
-    fontWeight: FontWeight.w700,
-  );
+  // Define other text styles as needed
 }
