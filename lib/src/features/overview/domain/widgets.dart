@@ -508,4 +508,73 @@ class Screen02Widgets {
       ),
     );
   }
+
+// All categories Button Categoriesico
+  static Widget categoriesIco() {
+    return Positioned(
+      left: 23,
+      top: 155,
+      child: Container(
+        width: 140,
+        height: 40,
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [
+              Color.fromARGB(255, 48, 46, 38),
+              Color.fromARGB(255, 184, 113, 168)
+            ], // Example gradient colors
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+          color: const Color.fromARGB(255, 232, 198, 224), // Border color
+          width: 2, // Border width
+
+          // Adjust as needed
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              width: 14,
+              height: 14,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/grafiken/CategoriesIco.png"),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+            const SizedBox(width: 5), // Add some spacing between icon and text
+            const Text(
+              'All categories',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 11,
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w600,
+                height: 1, // Adjust the height based on your design
+              ),
+            ),
+            const SizedBox(width: 5), // Add some spacing between text and arrow
+            Container(
+              width: 12,
+              height: 8,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/grafiken/arrow.png"),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // static Widget categoriesSegmentedButton() { }
 }

@@ -26,41 +26,10 @@ class Screen02 extends StatelessWidget {
             Screen02Widgets.productPriceText(),
             Screen02Widgets.ratingText(),
             Screen02Widgets.starIcon(),
-            Positioned(
-              left: 45,
-              top: 161,
-              child: Screen02Widgets.categoryText("All categories"),
-            ),
-            Positioned(
-              left: 199,
-              top: 161,
-              child: Screen02Widgets.categoryText("Salty"),
-            ),
-            Positioned(
-              left: 288,
-              top: 161,
-              child: Screen02Widgets.categoryText("Sweet"),
-            ),
-            Positioned(
-              left: 386,
-              top: 161,
-              child: Screen02Widgets.categoryText("Sour"),
-            ),
-            Positioned(
-              left: 476,
-              top: 161,
-              child: Screen02Widgets.categoryText("Bitter"),
-            ),
-            Positioned(
-              left: 566,
-              top: 161,
-              child: Screen02Widgets.categoryText("Umami"),
-            ),
-            Positioned(
-              left: 23,
-              top: 514,
-              child: Screen02Widgets.recommendationText(),
-            ),
+            Screen02Widgets.categoriesIco(),
+            // Screen02Widgets.categoriesSegmentedButton(),
+            Screen02Widgets.recommendationText(),
+
             Positioned(
               left: 23,
               top: 557,
