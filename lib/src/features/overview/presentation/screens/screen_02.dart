@@ -19,6 +19,8 @@ class Screen02 extends StatelessWidget {
         child: Stack(
           children: [
             Screen02Widgets.headerText(),
+            Screen02Widgets.categoriesIco(),
+            // Screen02Widgets.categoriesChip(),
             Screen02Widgets.productBckgImage(),
             Screen02Widgets.product3DImage(),
             Screen02Widgets.addOrderButton(context), // addButton
@@ -26,8 +28,11 @@ class Screen02 extends StatelessWidget {
             Screen02Widgets.productPriceText(),
             Screen02Widgets.ratingText(),
             Screen02Widgets.starIcon(),
-            Screen02Widgets.categoriesIco(),
-            // Screen02Widgets.categoriesSegmentedButton(),
+            Positioned(
+              left: 179,
+              top: 152,
+              child: Screen02Widgets.categoriesChip(),
+            ),
             Screen02Widgets.recommendationText(),
 
             Positioned(

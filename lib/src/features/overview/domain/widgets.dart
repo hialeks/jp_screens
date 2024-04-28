@@ -165,6 +165,187 @@ class Screen02Widgets {
     );
   }
 
+  static categoriesIco() {
+    return Container(
+      margin: const EdgeInsets.only(left: 23, top: 155),
+      width: 140,
+      height: 40,
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [
+            Color.fromARGB(255, 48, 46, 38),
+            Color.fromARGB(255, 184, 113, 168)
+          ], // Example gradient colors
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: const Color.fromARGB(255, 232, 198, 224), // Border color
+          width: 0.5, // Border width
+          // Adjust as needed
+        ),
+      ),
+      child: TextButton(
+        onPressed: () {
+          // Handle button press
+        },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              width: 14,
+              height: 14,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/grafiken/CategoriesIco.png"),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+            const SizedBox(width: 5), // Add some spacing between icon and text
+            const Text(
+              'All categories',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 11,
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w600,
+                height: 1, // Adjust the height based on your design
+              ),
+            ),
+            const SizedBox(width: 5), // Add some spacing between text and arrow
+            Container(
+              width: 12,
+              height: 8,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/grafiken/arrow.png"),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+// CHOICE CHIP
+  static Widget categoriesChip() {
+    return Column(
+      children: [
+        Row(
+          children: [
+            ChoiceChip(
+              label: const Text("Salty"),
+              selected: true,
+              onSelected: (_) {},
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+                side: const BorderSide(
+                  color: Color.fromARGB(0, 0, 0, 0), // Цвят на рамката
+                  width: 1, // Ширина на рамката
+                ),
+              ),
+              backgroundColor: const Color.fromARGB(255, 237, 199,
+                  233), // Фонов цвят на бутона - можеш да го промениш
+              labelStyle: const TextStyle(
+                  color: Color(
+                      0xFF94909A)), // Примерен цвят на текста - можеш да го промениш
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 8), // Промени размерите според желанието си
+            ),
+            const SizedBox(width: 10), // Пространство между бутоните
+            ChoiceChip(
+              label: const Text("Sweet"),
+              selected: false,
+              onSelected: (_) {},
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+                side: const BorderSide(
+                  color: Color.fromARGB(255, 246, 227, 244), // Цвят на рамката
+                  width: 1, // Ширина на рамката
+                ),
+              ),
+              backgroundColor: const Color.fromARGB(
+                  255, 201, 136, 204), // Примерен цвят - можеш да го промениш
+              labelStyle: const TextStyle(
+                  color: Colors
+                      .white), // Примерен цвят на текста - можеш да го промениш
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 8), // Промени размерите според желанието си
+            ),
+            ChoiceChip(
+              label: const Text("Sweet"),
+              selected: false,
+              onSelected: (_) {},
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+                side: const BorderSide(
+                  color: Color.fromARGB(255, 246, 227, 244), // Цвят на рамката
+                  width: 1, // Ширина на рамката
+                ),
+              ),
+              backgroundColor: const Color.fromARGB(
+                  255, 201, 136, 204), // Примерен цвят - можеш да го промениш
+              labelStyle: const TextStyle(
+                  color: Colors
+                      .white), // Примерен цвят на текста - можеш да го промениш
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 8), // Промени размерите според желанието си
+            ),
+            ChoiceChip(
+              label: const Text("Sweet"),
+              selected: false,
+              onSelected: (_) {},
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+                side: const BorderSide(
+                  color: Color.fromARGB(255, 246, 227, 244), // Цвят на рамката
+                  width: 1, // Ширина на рамката
+                ),
+              ),
+              backgroundColor: const Color.fromARGB(
+                  255, 201, 136, 204), // Примерен цвят - можеш да го промениш
+              labelStyle: const TextStyle(
+                  color: Colors
+                      .white), // Примерен цвят на текста - можеш да го промениш
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 8), // Промени размерите според желанието си
+            ),
+            ChoiceChip(
+              label: const Text("Sweet"),
+              selected: false,
+              onSelected: (_) {},
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+                side: const BorderSide(
+                  color: Color.fromARGB(255, 246, 227, 244), // Цвят на рамката
+                  width: 1, // Ширина на рамката
+                ),
+              ),
+              backgroundColor: const Color.fromARGB(
+                  255, 201, 136, 204), // Примерен цвят - можеш да го промениш
+              labelStyle: const TextStyle(
+                  color: Colors
+                      .white), // Примерен цвят на текста - можеш да го промениш
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 8), // Промени размерите според желанието си
+            ),
+            // Останалите бутони със същите настройки...
+          ],
+        ),
+      ],
+    );
+  }
+
   static Widget productDescriptionText() {
     return const Positioned(
       left: 40,
@@ -393,55 +574,6 @@ class Screen02Widgets {
     );
   }
 
-/*
-  static Widget addButton(BuildContext context) {
-    return Positioned(
-      left: 40,
-      top: 395,
-      child: ElevatedButton(
-        onPressed: () {},
-        style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.zero,
-          backgroundColor: Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
-            side: const BorderSide(
-              color: Color(0xFFC366E9),
-              width: 1,
-            ),
-          ),
-          elevation: 0,
-          shadowColor: const Color(0x4CEA71C6),
-        ),
-        child: Ink(
-          decoration: BoxDecoration(
-            gradient: const RadialGradient(
-              center: Alignment(0.7, 0.15),
-              radius: 2.75,
-              colors: [Color(0xFF938CF4), Color(0xFFDAADF5)],
-            ),
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Container(
-            width: 90,
-            height: 40,
-            alignment: Alignment.center,
-            child: const Text(
-              'Add to order',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 11,
-                fontFamily: 'Inter',
-                fontWeight: FontWeight.w600,
-                height: 0,
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-*/
   static Widget product3DImage() {
     return Positioned(
       left: 151,
@@ -508,73 +640,4 @@ class Screen02Widgets {
       ),
     );
   }
-
-// All categories Button Categoriesico
-  static Widget categoriesIco() {
-    return Positioned(
-      left: 23,
-      top: 155,
-      child: Container(
-        width: 140,
-        height: 40,
-        decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            colors: [
-              Color.fromARGB(255, 48, 46, 38),
-              Color.fromARGB(255, 184, 113, 168)
-            ], // Example gradient colors
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(
-          color: const Color.fromARGB(255, 232, 198, 224), // Border color
-          width: 2, // Border width
-
-          // Adjust as needed
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              width: 14,
-              height: 14,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/grafiken/CategoriesIco.png"),
-                  fit: BoxFit.fill,
-                ),
-              ),
-            ),
-            const SizedBox(width: 5), // Add some spacing between icon and text
-            const Text(
-              'All categories',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 11,
-                fontFamily: 'Inter',
-                fontWeight: FontWeight.w600,
-                height: 1, // Adjust the height based on your design
-              ),
-            ),
-            const SizedBox(width: 5), // Add some spacing between text and arrow
-            Container(
-              width: 12,
-              height: 8,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/grafiken/arrow.png"),
-                  fit: BoxFit.fill,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  // static Widget categoriesSegmentedButton() { }
 }
