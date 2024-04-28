@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:jp_screens/src/features/overview/domain/styles.dart';
-import 'package:jp_screens/src/features/overview/presentation/screens/screen_01.dart';
 import 'package:jp_screens/src/features/overview/presentation/screens/screen_02.dart';
+import 'package:jp_screens/src/features/overview/presentation/screens/screen_02a.dart';
 
 //! Screen 1
 
@@ -353,7 +353,59 @@ class Screen02Widgets {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) {
-                return const Screen01(); //!Screen
+                return const Screen02a(); //!Screen
+              }),
+            );
+          },
+          child: Container(
+            width: 90,
+            height: 40,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              gradient: const RadialGradient(
+                center: Alignment(0.7, 0.15),
+                radius: 2.75,
+                colors: [Color(0xFF938CF4), Color(0xFFDAADF5)],
+              ),
+              boxShadow: const [
+                BoxShadow(
+                  color: Color.fromARGB(255, 121, 60, 104),
+                  blurRadius: 20.00,
+                  offset: Offset(1, 11),
+                  spreadRadius: 5,
+                ),
+              ],
+            ),
+            child: const Center(
+              child: Text(
+                'Add to order',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 11,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w600,
+                  height: 0,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  static Widget addOrderButtonA(BuildContext context) {
+    return Positioned(
+      left: 40,
+      top: 355,
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) {
+                return const Screen02(); //!Screen
               }),
             );
           },
@@ -593,6 +645,30 @@ class Screen02Widgets {
           image: DecorationImage(
             image: AssetImage("assets/details/trapez.png"),
             fit: BoxFit.fill,
+          ),
+        ),
+      ),
+    );
+  }
+
+  static Widget productBckgConteiner() {
+    return Positioned(
+      left: 20,
+      top: 230,
+      child: Container(
+        width: 360,
+        height: 200,
+        decoration: Screen01Styles.blurredContainerDecoration(),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(28),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(
+              sigmaX: 17.0,
+              sigmaY: 17.0,
+            ),
+            child: Container(
+              decoration: Screen01Styles.backdropFilterContainerDecoration(),
+            ),
           ),
         ),
       ),
