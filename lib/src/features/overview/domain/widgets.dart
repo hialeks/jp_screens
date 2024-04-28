@@ -175,21 +175,18 @@ class Screen02Widgets {
           colors: [
             Color.fromARGB(255, 48, 46, 38),
             Color.fromARGB(255, 184, 113, 168)
-          ], // Example gradient colors
+          ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
           color: const Color.fromARGB(255, 232, 198, 224), // Border color
-          width: 0.5, // Border width
-          // Adjust as needed
+          width: 0.5,
         ),
       ),
       child: TextButton(
-        onPressed: () {
-          // Handle button press
-        },
+        onPressed: () {},
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -204,7 +201,7 @@ class Screen02Widgets {
                 ),
               ),
             ),
-            const SizedBox(width: 5), // Add some spacing between icon and text
+            const SizedBox(width: 5),
             const Text(
               'All categories',
               style: TextStyle(
@@ -212,10 +209,10 @@ class Screen02Widgets {
                 fontSize: 11,
                 fontFamily: 'Inter',
                 fontWeight: FontWeight.w600,
-                height: 1, // Adjust the height based on your design
+                height: 1,
               ),
             ),
-            const SizedBox(width: 5), // Add some spacing between text and arrow
+            const SizedBox(width: 5),
             Container(
               width: 12,
               height: 8,
@@ -245,20 +242,15 @@ class Screen02Widgets {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
                 side: const BorderSide(
-                  color: Color.fromARGB(0, 0, 0, 0), // Цвят на рамката
-                  width: 1, // Ширина на рамката
+                  color: Color.fromARGB(0, 0, 0, 0),
+                  width: 1,
                 ),
               ),
-              backgroundColor: const Color.fromARGB(255, 237, 199,
-                  233), // Фонов цвят на бутона - можеш да го промениш
-              labelStyle: const TextStyle(
-                  color: Color(
-                      0xFF94909A)), // Примерен цвят на текста - можеш да го промениш
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 8), // Промени размерите според желанието си
+              backgroundColor: const Color.fromARGB(255, 237, 199, 233),
+              labelStyle: const TextStyle(color: Color(0xFF94909A)),
+              padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 8),
             ),
-            const SizedBox(width: 10), // Пространство между бутоните
+            const SizedBox(width: 10),
             ChoiceChip(
               label: const Text("Sweet"),
               selected: false,
@@ -266,80 +258,62 @@ class Screen02Widgets {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
                 side: const BorderSide(
-                  color: Color.fromARGB(255, 246, 227, 244), // Цвят на рамката
-                  width: 1, // Ширина на рамката
+                  color: Color.fromARGB(255, 246, 227, 244),
+                  width: 1,
                 ),
               ),
-              backgroundColor: const Color.fromARGB(
-                  255, 201, 136, 204), // Примерен цвят - можеш да го промениш
-              labelStyle: const TextStyle(
-                  color: Colors
-                      .white), // Примерен цвят на текста - можеш да го промениш
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 8), // Промени размерите според желанието си
+              backgroundColor: const Color.fromARGB(255, 201, 136, 204),
+              labelStyle: const TextStyle(color: Colors.white),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
             ),
+            const SizedBox(width: 10),
             ChoiceChip(
-              label: const Text("Sweet"),
+              label: const Text("Sour"),
               selected: false,
               onSelected: (_) {},
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
                 side: const BorderSide(
                   color: Color.fromARGB(255, 246, 227, 244), // Цвят на рамката
-                  width: 1, // Ширина на рамката
+                  width: 1,
                 ),
               ),
-              backgroundColor: const Color.fromARGB(
-                  255, 201, 136, 204), // Примерен цвят - можеш да го промениш
-              labelStyle: const TextStyle(
-                  color: Colors
-                      .white), // Примерен цвят на текста - можеш да го промениш
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 8), // Промени размерите според желанието си
+              backgroundColor: const Color.fromARGB(255, 201, 136, 204),
+              labelStyle: const TextStyle(color: Colors.white),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
             ),
+            const SizedBox(width: 10),
             ChoiceChip(
-              label: const Text("Sweet"),
+              label: const Text("Bitter"),
               selected: false,
               onSelected: (_) {},
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
                 side: const BorderSide(
-                  color: Color.fromARGB(255, 246, 227, 244), // Цвят на рамката
-                  width: 1, // Ширина на рамката
+                  color: Color.fromARGB(255, 246, 227, 244),
+                  width: 1,
                 ),
               ),
-              backgroundColor: const Color.fromARGB(
-                  255, 201, 136, 204), // Примерен цвят - можеш да го промениш
-              labelStyle: const TextStyle(
-                  color: Colors
-                      .white), // Примерен цвят на текста - можеш да го промениш
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 8), // Промени размерите според желанието си
+              backgroundColor: const Color.fromARGB(255, 201, 136, 204),
+              labelStyle: const TextStyle(color: Colors.white),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
             ),
+            const SizedBox(width: 10),
             ChoiceChip(
-              label: const Text("Sweet"),
+              label: const Text("Umami"),
               selected: false,
               onSelected: (_) {},
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
                 side: const BorderSide(
-                  color: Color.fromARGB(255, 246, 227, 244), // Цвят на рамката
-                  width: 1, // Ширина на рамката
+                  color: Color.fromARGB(255, 246, 227, 244),
+                  width: 1,
                 ),
               ),
-              backgroundColor: const Color.fromARGB(
-                  255, 201, 136, 204), // Примерен цвят - можеш да го промениш
-              labelStyle: const TextStyle(
-                  color: Colors
-                      .white), // Примерен цвят на текста - можеш да го промениш
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 8), // Промени размерите според желанието си
+              backgroundColor: const Color.fromARGB(255, 201, 136, 204),
+              labelStyle: const TextStyle(color: Colors.white),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
             ),
-            // Останалите бутони със същите настройки...
           ],
         ),
       ],
@@ -524,7 +498,7 @@ class Screen02Widgets {
               ),
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 0),
           Text(
             cupName,
             style: const TextStyle(
@@ -534,7 +508,7 @@ class Screen02Widgets {
               fontWeight: FontWeight.w600,
             ),
           ),
-          const SizedBox(height: 2),
+          const SizedBox(height: 10),
           Text(
             productName,
             style: const TextStyle(

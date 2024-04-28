@@ -20,21 +20,26 @@ class Screen02 extends StatelessWidget {
           children: [
             Screen02Widgets.headerText(),
             Screen02Widgets.categoriesIco(),
-            // Screen02Widgets.categoriesChip(),
             Screen02Widgets.productBckgImage(),
             Screen02Widgets.product3DImage(),
-            Screen02Widgets.addOrderButton(context), // addButton
+            Screen02Widgets.addOrderButton(context),
             Screen02Widgets.productDescriptionText(),
             Screen02Widgets.productPriceText(),
             Screen02Widgets.ratingText(),
             Screen02Widgets.starIcon(),
             Positioned(
               left: 179,
-              top: 152,
-              child: Screen02Widgets.categoriesChip(),
+              top: 151,
+              child: SizedBox(
+                height: 50,
+                width: 395,
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Screen02Widgets.categoriesChip(),
+                ),
+              ),
             ),
             Screen02Widgets.recommendationText(),
-
             Positioned(
               left: 23,
               top: 557,
@@ -47,29 +52,28 @@ class Screen02 extends StatelessWidget {
                     children: [
                       Screen02Widgets.productItem(
                         imageUrl: "assets/grafiken/cat cupcakes_3D.png",
-                        cupName: "Mogli"
-                            "’s Cup",
+                        cupName: "Mogli’s Cup",
                         productName: "Strawberry ice cream",
                         likes: "♡ 200",
                         price: "₳ 8.99",
                       ),
                       Screen02Widgets.productItem(
                         imageUrl: "assets/grafiken/Icecream.png",
-                        cupName: "Balus Cup",
+                        cupName: "Balu's Cup",
                         productName: "Pistachio ice cream",
                         price: "₳ 8.99",
                         likes: "♡ 177",
                       ),
                       Screen02Widgets.productItem(
                         imageUrl: "assets/grafiken/Icecream_3D.png",
-                        cupName: "Alekss Lolly",
+                        cupName: "Aleks's Lolly",
                         productName: "Pistachio ice cream",
                         price: "₳ 8.99",
                         likes: "♡ 317",
                       ),
                       Screen02Widgets.productItem(
                         imageUrl: "assets/grafiken/ice cream stick_3D.png",
-                        cupName: "Kidss Wonder",
+                        cupName: "Kids's Wonder",
                         productName: "Pistachio ice cream",
                         price: "₳ 8.99",
                         likes: "♡ 177",
