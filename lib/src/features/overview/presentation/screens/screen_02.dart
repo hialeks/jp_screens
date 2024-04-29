@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jp_screens/src/features/overview/domain/widgets/bottom_sheet.dart';
 import 'package:jp_screens/src/features/overview/domain/widgets/widgets.dart';
 
 class Screen02 extends StatelessWidget {
@@ -69,10 +70,9 @@ class Screen02 extends StatelessWidget {
                                 child: Center(
                                   child: Column(
                                     children: [
-                                      // Вместо така:
-                                      // Screen02Widgets.addOrderButtonB(context),
-                                      // Трябва да добавите метода като дете на колоната:
-                                      Screen02Widgets.addOrderButton(context),
+                                      //! BOTTOM SHEET
+
+                                      bottomSheet(context),
                                     ],
                                   ),
                                 ),
