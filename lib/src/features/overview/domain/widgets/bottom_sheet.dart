@@ -1,8 +1,30 @@
 import 'dart:ui';
 
 import 'package:customizable_counter/customizable_counter.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:jp_screens/src/features/overview/domain/styles/styles.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+
+class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+        // Use the string name to access icons.
+        icon: Icon(MdiIcons.fromString('sword')),
+        onPressed: () {});
+  }
+}
+
+enum Sky { midnight, viridian, cerulean }
+
+Map<Sky, Color> skyColors = <Sky, Color>{
+  Sky.midnight: const Color.fromARGB(255, 98, 98, 101),
+  Sky.viridian: const Color.fromARGB(255, 98, 98, 101),
+  Sky.cerulean: const Color.fromARGB(255, 98, 98, 101),
+};
 
 class MyBottomSheet extends StatefulWidget {
   const MyBottomSheet({super.key});
@@ -12,7 +34,7 @@ class MyBottomSheet extends StatefulWidget {
 }
 
 class _MyBottomSheetState extends State<MyBottomSheet> {
-  final int _counterValue = 0;
+  Sky _selectedSegment = Sky.midnight; // Добавената променлива
 
   @override
   Widget build(BuildContext context) {
@@ -42,19 +64,17 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
                 ),
               ),
               Positioned(
-                left: 350,
-                top: 130,
-                child: Container(
-                  width: 27,
-                  height: 27,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/grafiken/xIco.png"),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-              ),
+                  left: 335,
+                  top: 130,
+                  child: IconButton(
+                      // Use the string name to access icons.
+                      icon: Icon(MdiIcons.fromString('close-circle-outline')),
+                      color: const Color.fromARGB(223, 164, 164, 166),
+                      iconSize: 37,
+                      onPressed: () {
+                        Navigator.pop(
+                            context); // Върнете се към Screen02 при натискане
+                      })),
               Positioned(
                 left: 28,
                 top: 270,
@@ -400,31 +420,71 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
                 top: 650,
                 child: Row(
                   children: [
-                    // Първият CounterButton
+                    SizedBox(
+                      width: 200,
+                      height: 38,
+                      child: CupertinoSlidingSegmentedControl<Sky>(
+                        backgroundColor: const Color.fromARGB(200, 76, 76, 76),
+                        thumbColor: skyColors[_selectedSegment]!,
+                        groupValue: _selectedSegment,
+                        onValueChanged: (Sky? value) {
+                          if (value != null) {
+                            setState(() {
+                              _selectedSegment = value;
+                            });
+                          }
+                        },
+                        children: const <Sky, Widget>{
+                          Sky.midnight: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 0),
+                            child: Text(
+                              'Smal',
+                              style: TextStyle(
+                                  color: CupertinoColors.white,
+                                  fontSize: 10), //
+                            ),
+                          ),
+                          Sky.viridian: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 0),
+                            child: Text(
+                              'Medium',
+                              style: TextStyle(
+                                  color: CupertinoColors.white, fontSize: 10),
+                            ),
+                          ),
+                          Sky.cerulean: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 0),
+                            child: Text(
+                              'Large',
+                              style: TextStyle(
+                                  color: CupertinoColors.white, fontSize: 10),
+                            ),
+                          ),
+                        },
+                      ),
+                    ),
 
-                    // Отделител между двата CounterButton, например SizedBox
-                    const SizedBox(
-                        width:
-                            30), // Променете ширината според вашите изисквания
-                    // Вторият CounterButton
+                    const SizedBox(width: 32),
+                    // CounterButton
                     CustomizableCounter(
                       borderColor: const Color.fromARGB(0, 0, 0, 0),
                       borderWidth: 5,
                       borderRadius: 100,
                       backgroundColor: const Color.fromARGB(0, 0, 0, 0),
-                      textColor: const Color.fromARGB(255, 194, 194, 194),
-                      textSize: 22,
+                      buttonText: "Add item",
+                      textColor: const Color(0xFFD9D9D9),
+                      textSize: 17,
                       count: 0,
-                      step: 5,
+                      step: 1,
                       minCount: 0,
                       maxCount: 10,
                       incrementIcon: const Icon(
                         Icons.add_circle_outline,
-                        color: Color.fromARGB(255, 104, 112, 106),
+                        color: Color.fromARGB(255, 98, 98, 101),
                       ),
                       decrementIcon: const Icon(
                         Icons.remove_circle_outline,
-                        color: Color.fromARGB(255, 104, 112, 106),
+                        color: Color.fromARGB(255, 98, 98, 101),
                       ),
                       onDecrement: (value) {
                         ScaffoldMessenger.of(context).showSnackBar(
