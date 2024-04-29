@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jp_screens/src/features/overview/domain/widgets.dart';
+import 'package:jp_screens/src/features/overview/domain/widgets/widgets.dart';
 
 class Screen02 extends StatelessWidget {
-  const Screen02({super.key}); // Тук добавяме Key параметър към конструктора
+  const Screen02({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class Screen02 extends StatelessWidget {
         child: Stack(
           children: [
             Screen02Widgets.headerText(),
-            Screen02Widgets.categoriesIco(),
+            Screen02Widgets.categoriesIco(context),
             Screen02Widgets.productBckgImage(),
             Screen02Widgets.product3DImage(),
             Screen02Widgets.addOrderButton(context),
@@ -28,7 +28,7 @@ class Screen02 extends StatelessWidget {
             Screen02Widgets.ratingText(),
             Screen02Widgets.starIcon(),
             Positioned(
-              left: 179,
+              left: 170,
               top: 151,
               child: SizedBox(
                 height: 50,
@@ -50,12 +50,43 @@ class Screen02 extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      Screen02Widgets.productItem(
-                        imageUrl: "assets/grafiken/cat cupcakes_3D.png",
-                        cupName: "Mogli’s Cup",
-                        productName: "Strawberry ice cream",
-                        likes: "♡ 200",
-                        price: "₳ 8.99",
+                      GestureDetector(
+                        onTap: () {
+                          showModalBottomSheet(
+                            context: context,
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                topRight: Radius.circular(20),
+                              ),
+                            ),
+                            isScrollControlled: true,
+                            builder: (BuildContext context) {
+                              return Container(
+                                height: MediaQuery.of(context).size.height *
+                                    0.889, // % higth
+                                color: const Color.fromARGB(255, 48, 49, 43),
+                                child: Center(
+                                  child: Column(
+                                    children: [
+                                      // Вместо така:
+                                      // Screen02Widgets.addOrderButtonB(context),
+                                      // Трябва да добавите метода като дете на колоната:
+                                      Screen02Widgets.addOrderButton(context),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                        child: Screen02Widgets.productItem(
+                          imageUrl: "assets/grafiken/cat cupcakes_3D.png",
+                          cupName: "Mogli’s Cup",
+                          productName: "Strawberry ice cream",
+                          likes: "♡ 200",
+                          price: "₳ 8.99",
+                        ),
                       ),
                       Screen02Widgets.productItem(
                         imageUrl: "assets/grafiken/Icecream.png",
@@ -78,6 +109,7 @@ class Screen02 extends StatelessWidget {
                         price: "₳ 8.99",
                         likes: "♡ 177",
                       ),
+                      // Останалите продукти...
                     ],
                   ),
                 ),

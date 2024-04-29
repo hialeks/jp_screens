@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jp_screens/src/features/overview/domain/widgets.dart';
+import 'package:jp_screens/src/features/overview/domain/widgets/widgets.dart';
 
 class Screen02a extends StatelessWidget {
-  const Screen02a({super.key}); // Тук добавяме Key параметър към конструктора
+  const Screen02a({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class Screen02a extends StatelessWidget {
         child: Stack(
           children: [
             Screen02Widgets.headerText(),
-            Screen02Widgets.categoriesIco(),
+            Screen02Widgets.categoriesIco(context),
             Screen02Widgets.productBckgConteiner(),
             Screen02Widgets.product3DImage(),
             Screen02Widgets.addOrderButtonA(context),

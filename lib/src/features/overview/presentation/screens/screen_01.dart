@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jp_screens/src/features/overview/domain/styles.dart';
-import 'package:jp_screens/src/features/overview/domain/widgets.dart';
+import 'package:jp_screens/src/features/overview/domain/styles/styles.dart';
+import 'package:jp_screens/src/features/overview/domain/widgets/widgets.dart';
 
 class Screen01 extends StatelessWidget {
   const Screen01({super.key});

@@ -1,7 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:jp_screens/src/features/overview/domain/styles.dart';
+import 'package:jp_screens/src/features/overview/domain/styles/styles.dart';
+import 'package:jp_screens/src/features/overview/presentation/screens/screen_01.dart';
 import 'package:jp_screens/src/features/overview/presentation/screens/screen_02.dart';
 import 'package:jp_screens/src/features/overview/presentation/screens/screen_02a.dart';
 
@@ -165,7 +166,7 @@ class Screen02Widgets {
     );
   }
 
-  static categoriesIco() {
+  static categoriesIco(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(left: 23, top: 155),
       width: 140,
@@ -186,7 +187,12 @@ class Screen02Widgets {
         ),
       ),
       child: TextButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const Screen01()),
+          );
+        },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -274,7 +280,7 @@ class Screen02Widgets {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
                 side: const BorderSide(
-                  color: Color.fromARGB(255, 246, 227, 244), // Цвят на рамката
+                  color: Color.fromARGB(255, 246, 227, 244),
                   width: 1,
                 ),
               ),
@@ -687,6 +693,141 @@ class Screen02Widgets {
           fontFamily: 'Inter',
           fontWeight: FontWeight.w700,
         ),
+      ),
+    );
+  }
+}
+
+class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Your App'),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            productItem(
+              imageUrl: 'your_image_url',
+              cupName: 'Your Cup Name',
+              productName: 'Your Product Name',
+              price: 'Product Price',
+              likes: 'Likes',
+            ),
+            // Можеш да добавиш още productItem widgets тук...
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Покажи долния екран при натискане на бутон или друго събитие
+          showModalBottomSheet(
+            context: context,
+            builder: (BuildContext context) {
+              return Container(
+                  // Съдържанието на долния екран тук...
+                  );
+            },
+          );
+        },
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+
+// BOTTOM SHEET
+  static Widget productItem({
+    required String imageUrl,
+    required String cupName,
+    required String productName,
+    required String price,
+    required String likes,
+  }) {
+    return Container(
+      margin: const EdgeInsets.only(right: 25),
+      width: 190,
+      height: 262,
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [
+            Color.fromARGB(255, 99, 98, 107),
+            Color.fromARGB(255, 121, 118, 192),
+            Color.fromARGB(255, 115, 86, 189)
+          ],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          stops: [0.0, 0.5, 1.0],
+        ),
+        borderRadius: BorderRadius.circular(28.0),
+        border: Border.all(
+          color: const Color.fromARGB(255, 142, 130, 171),
+          width: 1.5,
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 0),
+          Container(
+            width: 160,
+            height: 160,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(imageUrl),
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+          const SizedBox(height: 0),
+          Text(
+            cupName,
+            style: const TextStyle(
+              color: Color(0xFFF7F7F7),
+              fontSize: 13,
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(height: 10),
+          Text(
+            productName,
+            style: const TextStyle(
+              color: Color(0xFFAFA6DA),
+              fontSize: 12,
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+          const SizedBox(height: 2),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                price,
+                style: const TextStyle(
+                  color: Color(0xFFF7F7F7),
+                  fontSize: 13,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const Spacer(),
+              Text(
+                likes,
+                style: const TextStyle(
+                  color: Color(0xFFAFA6DA),
+                  fontSize: 13,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ],
+          )
+        ],
       ),
     );
   }
