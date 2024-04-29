@@ -403,8 +403,10 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
                     // Първият CounterButton
 
                     // Отделител между двата CounterButton, например SizedBox
-                    const SizedBox(width: 30),
-                    // CounterButton
+                    const SizedBox(
+                        width:
+                            30), // Променете ширината според вашите изисквания
+                    // Вторият CounterButton
                     CustomizableCounter(
                       borderColor: const Color.fromARGB(0, 0, 0, 0),
                       borderWidth: 5,
@@ -413,7 +415,7 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
                       textColor: const Color.fromARGB(255, 194, 194, 194),
                       textSize: 22,
                       count: 0,
-                      step: 1,
+                      step: 5,
                       minCount: 0,
                       maxCount: 10,
                       incrementIcon: const Icon(
