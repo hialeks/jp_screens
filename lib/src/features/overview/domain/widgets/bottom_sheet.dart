@@ -42,7 +42,7 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
       children: [
         Container(
           width: 390,
-          height: 844,
+          height: 809,
           clipBehavior: Clip.antiAlias,
           decoration: const BoxDecoration(
             color: Color.fromARGB(0, 0, 0, 0),
@@ -65,7 +65,7 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
               ),
               Positioned(
                   left: 335,
-                  top: 130,
+                  top: 100,
                   child: IconButton(
                       // Use the string name to access icons.
                       icon: Icon(MdiIcons.fromString('close-circle-outline')),
@@ -258,7 +258,7 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
               ),
               Positioned(
                 left: 30,
-                top: 741,
+                top: 711,
                 child: Container(
                   width: 336,
                   height: 46,
@@ -289,7 +289,7 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
               ),
               const Positioned(
                 left: 100,
-                top: 753,
+                top: 723,
                 child: SizedBox(
                   width: 202,
                   child: Text(
@@ -417,7 +417,7 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
               ),
               Positioned(
                 left: 30,
-                top: 650,
+                top: 620,
                 child: Row(
                   children: [
                     SizedBox(
