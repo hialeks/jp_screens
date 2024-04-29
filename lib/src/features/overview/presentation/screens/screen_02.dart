@@ -65,14 +65,13 @@ class Screen02 extends StatelessWidget {
                             builder: (BuildContext context) {
                               return Container(
                                 height: MediaQuery.of(context).size.height *
-                                    0.889, // % higth
+                                    1, // % higth
                                 color: const Color.fromARGB(255, 48, 49, 43),
-                                child: Center(
+                                child: const Center(
                                   child: Column(
                                     children: [
                                       //! BOTTOM SHEET
-
-                                      bottomSheet(context),
+                                      MyBottomSheet(),
                                     ],
                                   ),
                                 ),

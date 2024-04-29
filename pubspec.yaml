@@ -7,8 +7,11 @@ environment:
   sdk: '>=3.3.4 <4.0.0'
 
 dependencies:
+  counter_button: ^1.0.1
+  customizable_counter: ^1.0.4
   flutter:
     sdk: flutter
+  item_count_number_button: ^1.9.2
   page_transition: ^2.1.0
   toggle_switch: ^2.3.0
 
