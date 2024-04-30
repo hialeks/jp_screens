@@ -717,7 +717,7 @@ class MyWidget extends StatelessWidget {
               price: 'Product Price',
               likes: 'Likes',
             ),
-            // Можеш да добавиш още productItem widgets тук...
+            //
           ],
         ),
       ),
